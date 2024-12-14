@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+   
+    <!-- Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Script EmailJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // Ganti dengan Public Key EmailJS Anda
+        emailjs.init("ficf4ml-OUz0tWwkN");
+      })();
+    </script>
+  </head>
+  <body>
+    <nav class="sticky-top bg-white shadow">
+      <div class="logo">Portfolio</div>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="about.html">Tentang Saya</a></li>
+        <li><a href="karir.html">Pendidikan</a></li>
+        <li><a href="hobi.html">Hobi</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="portovolio.html">Portofolio</a></li>
+        <li><a href="plan.html">Rencana</a></li>
+        <li><a href="contact.html" class="active">Kontak</a></li>
+      </ul>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <main class="contact-content mt-20 p-5">
+      <h1 class="section-title text-3xl font-bold text-center">Hubungi Saya</h1>
+
+      <div class="contact-container grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Baris Pertama: Form dan Lokasi -->
+        <div class="feedback-map-container flex flex-col md:flex-row gap-4">
+          <div class="feedback-form p-4 border rounded-lg shadow flex-1">
+            <h2 class="text-xl font-semibold">Kirim Pesan</h2>
+            <form id="contactForm" onsubmit="return sendEmail(event)">
+              <div class="form-group">
+                <label for="name">Nama Lengkap</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  required
+                  placeholder="Masukkan nama lengkap Anda"
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="user_email"
+                  required
+                  placeholder="Masukkan email Anda"
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tulis pesan Anda di sini"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="submit-button">
+                <span class="button-text">Kirim Pesan</span>
+                <span class="loading-spinner hidden">
+                  <i class="fas fa-spinner fa-spin"></i>
+                </span>
+              </button>
+            </form>
+          </div>
+
+          <div class="maps-container p-4 border rounded-lg shadow flex-1">
+            <h2 class="text-xl font-semibold">Lokasi</h2>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1189.79119494897!2d107.05031471004582!3d-6.246452944364835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698efe8581557b%3A0x964e6101e257916f!2sJl.%20Papan%20Meranti%20Blok%20F54%20No.5%2C%20Setiamekar%2C%20Kec.%20Tambun%20Sel.%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat%2017510!5e0!3m2!1sid!2sid!4v1731051416504!5m2!1sid!2sid"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Baris Kedua: Informasi Kontak -->
+        <div class="contact-info flex justify-between space-y-4">
+          <div class="info-card rounded-full p-4 border shadow flex-1">
+            <i class="fas fa-phone"></i>
+            <h3>Telepon</h3>
+            <p>+62 813-8954-5495</p>
+            <a href="https://wa.me/+62 081389645495" class="contact-button">Hubungi</a>
+          </div>
+
+          <div class="info-card rounded-full p-4 border shadow flex-1">
+            <i class="fab fa-instagram"></i>
+            <h3>Instagram</h3>
+            <p>@dimas_hardianto</p>
+            <a href="https://www.instagram.com/dimashardianto200863?igsh=aXJoN2E1OGt3Z2pq" target="_blank" class="contact-button">Follow</a>
+          </div>
+
+          <div class="info-card rounded-full p-4 border shadow flex-1">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>dimas@gmail.com</p>
+            <a href="mailto:dimashardianto2008@gmail.com" class="contact-button">Kirim Email</a>
+          </div>
+
+          <div class="info-card rounded-full p-4 border shadow flex-1">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Alamat</h3>
+            <p>Jl. papan meranti blok f54 No 4, tambun selatan</p>
+            <a href="https://maps.app.goo.gl/LTFb787niKzXjvsF7" target="_blank" class="contact-button">Lihat Maps</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 DIMAS HARDIANTO. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
